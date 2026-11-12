@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Five Sentence Term Paper Using Chi2 Analysis",
+    "section": "",
+    "text": "Introduction\nResearch Question: Does the color of the book predict the book’s genre?\nWhile associating colors with non-color concepts has often been thought of as a subjective measure that varies between individuals, it may be possible that in certain contexts, perception of associating specific colors with unique descriptors, such as book genres, may be shared amongst a population.\n\n\nLiterature Review\nOthers have previously studied how machine learning algorithms may predict information about a book including a book’s genre (Vayadande et al. 2024).\nDummy sentence (Toosi et al. 2025)\n\n\nMethod\n\nPart A:\n\nimport pandas as pd \nimport numpy as np \nimport seaborn as sns\nfrom scipy.stats import chi2_contingency\n\ndomain = 'https://raw.githubusercontent.com/'\npath = 'adamrossnelson/confident/refs/heads/main/data/'\nfile = 'confident_fictional_books.csv'\n\nbooks = pd.read_csv(domain + path + file)\n\n\n\nPart B:\nOur null hypothesis is that book cover color does not predict the book’s genre, wile our alternate hypothesis is that book cover color does predict a book’s genre, and we study this question with data from 359 books where we know that the book’s genre and the book’s cover color such that we can conduct a chi2 test to see if these two variables are either independent or dependent (as it turns out our chi2 test will involve a 6 x 6 test).\n\n\n\nResults\n\n# Conduct the chi2 with chi2_contingency by passing the observed \nx2, pval, degf, _ = chi2_contingency(\n    pd.crosstab(books['book_genre'], books['book_color'])\n)\n\nResults: Chi-squared statistic: 1.99210; p-value: 1.00000; degrees of freedom: 25.\nExample 1: 9.856e-09 (very small number)\nExample 2: 9.9e-09 (to two sig figs)\nExample 3: 0.00 (to first two places past decimal)\nWith a Chi-squared statistic result of 1.9921 and a p-value of about 1.000 (degrees of freedom: 25), we fail to reject the null hypothesis and conclude that given our data and given this analytical approach, there is no evidence to believe that a book’s cover color may predict that book’s genre.\n\n\nDiscussion\nWhile a book’s cover color does not seem to be able to directly predict the book’s genre in general, it is possible that associations between color and genre vary between people and consequently between authors, thus it may be possible that we may obtain a different result if we were to introduce the book’s author as an additional predictor.\n\n\nReferences\n\n\nToosi, Reza, Alireza Hosseini, Ramin Toosi, and Mohammad Ali Akhaee. 2025. “Judge a Book by Its Cover: A Multimodal Approach to Book Genre Prediction.” 2025 11th International Conference on Web Research (ICWR), 200–204.\n\n\nVayadande, Kuldeep, Preeti Bailke, Ashutosh M Kulkarni, R Kumar, and Ajit B Patil. 2024. “Book Genre Prediction Using NLP: A Review.” How Machine Learning Is Innovating Today’s World: A Concise Technical Guide, 37–46."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html#part-a",
+    "href": "index.html#part-a",
+    "title": "A Five Sentence Term Paper Using Chi2 Analysis",
+    "section": "Part A:",
+    "text": "Part A:\n\nimport pandas as pd \nimport numpy as np \nimport seaborn as sns\n\ndomain = 'https://raw.githubusercontent.com/'\npath = 'adamrossnelson/confident/refs/heads/main/data/'\nfile = 'confident_fictional_books.csv'\n\nbooks = pd.read_csv(domain + path + file)\n\nOur null hypothesis is that book cover color does not predict the book’s genre, wile our alternate hypothesis is that book cover color does predict a book’s genre, and we study this question with data from 359 books where we know that the book’s genre and the book’s cover color such that we can conduct a chi2 test to see if these two variables are either independent or dependent (as it turns out our chi2 test will involve a 6 x 6 test)."
+  }
+]
